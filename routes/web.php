@@ -22,6 +22,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
 Route::get('/projects/import', [ProjectController::class, 'import'])->name('project.import');
+Route::post('/projects/import', [ProjectController::class, 'importStore'])->name('project.import.store');
 Route::get('/tasks', [TaskController::class, 'index'])->name('task.index');
 
 Route::middleware('auth')->group(function () {
